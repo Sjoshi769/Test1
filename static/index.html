@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<style>
+p.ex1 {
+    margin-top: -80px;
+}
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:80px;   /* Height of the footer */
+   background:#D49870;
+}
+
+</style>
+
+<!--------------------
+LOGIN FORM
+by: Anil Kumar chaudhari
+www.chipmonk.com
+--------------------->
+
+<!--META-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login Form</title>
+
+<!--STYLESHEETS-->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<!--SCRIPTS-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+
+<!--Slider-in icons-->
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".username").focus(function() {
+		$(".user-icon").css("left","-48px");
+	});
+	$(".username").blur(function() {
+		$(".user-icon").css("left","0px");
+	});
+	
+	$(".password").focus(function() {
+		$(".pass-icon").css("left","-48px");
+	});
+	$(".password").blur(function() {
+		$(".pass-icon").css("left","0px");
+	});
+});
+</script>
+<script language="javascript">
+
+function checkEmail() {
+
+    var email = document.getElementById('email_id');
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    if (!filter.test(email.value)) {
+    
+	document.getElementById("errorReport").innerHTML = "You must enter a valid Email";
+    email.focus;
+    return false;
+ }
+}</script>
+</head>
+<body>
+<div style="width:100%; height:100px">&nbsp;&nbsp;&nbsp;&nbsp;<img src="havells_log.jpg" alt="Smiley face" height="100px" width="100px"><font size="5px" color="CC6600"><center><p class="ex1">Havells Street Light Mgt. System</p></center></font></div>
+<!--WRAPPER-->
+<div id="wrapper">
+
+	<!--SLIDE-IN ICONS-->
+    <div class="user-icon"></div>
+    <div class="pass-icon"></div>
+    <!--END SLIDE-IN ICONS-->
+
+<!--LOGIN FORM-->
+<form name="login-form" class="login-form" action="/login" method="post">
+
+	<!--HEADER-->
+    <div class="header">
+    <!--TITLE--><h1>Login Here</h1><!--END TITLE-->
+	<hr>
+    
+    </div>
+    <!--END HEADER-->
+	
+	<!--CONTENT-->
+    <div class="content">
+	<!--USERNAME--><input name="username" id="email_id" type="email" class="input username" placeholder="email" onfocus="this.value=''" required="" /><!--END USERNAME-->
+					<span id="errorReport" style="color:blue"></span>
+    <!--PASSWORD--><input name="password" type="password" class="input password" placeholder="Password" onfocus="this.value=''"  required=""/><!--END PASSWORD-->
+    </div>
+    <!--END CONTENT-->
+    
+    <!--FOOTER-->
+    <div class="footer">
+    <!--LOGIN BUTTON--><input type="submit" name="submit" value="Login" class="button"  onclick='checkEmail();' /><!--END LOGIN BUTTON-->
+   
+    </div>
+    <!--END FOOTER-->
+
+</form>
+<!--END LOGIN FORM-->
+
+</div>
+<!--END WRAPPER-->
+
+<!--GRADIENT--><div class="gradient"></div><!--END GRADIENT-->
+<div id="footer"><br> &nbsp;&nbsp;&nbsp; &nbsp;Copyright&copy;2015 Chipmonk Technologies
+
+</div>
+
+</body>
+</html>
